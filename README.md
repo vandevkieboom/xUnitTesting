@@ -19,7 +19,6 @@
 ## Basisconcepten
 
 ### Constructor-setup
-
 Indien voor elke test dezelfde code moeten schrijven kunnen we dit in één keer doen bij het opstarten van de test aan de hand van een constructor.
 ```csharp
 public class UnitTests
@@ -35,10 +34,8 @@ public class UnitTests
 }
 ```
 
-### fact-en-theory
-Een `Fact` is een test die altijd wordt uitgevoerd met een vaste set aanvoergegevens.
-<br/>
-Het wordt gebruikt voor eenvoudige tests die een specifieke functionaliteit verifiëren.
+### Fact-en-Theory
+Een `Fact` is een test die altijd wordt uitgevoerd met een vaste set aanvoergegevens. Het wordt gebruikt voor eenvoudige tests die een specifieke functionaliteit verifiëren.
 ```csharp
 [Fact]
 public void Test_SimpleAddition()
@@ -48,9 +45,7 @@ public void Test_SimpleAddition()
 }
 ```
 
-Een `Theory` is een test die meerdere sets van gegevens accepteert.
-<br/>
-Dit is nuttig voor parametrische tests waarbij de test met verschillende invoerwaarden kan worden uitgevoerd.
+Een `Theory` is een test die meerdere sets van gegevens accepteert. Dit is nuttig voor parametrische tests waarbij de test met verschillende invoerwaarden kan worden uitgevoerd.
 ```csharp
 [Theory]
 [InlineData(2, 2, 4)]  // test met deze invoerwaarden
@@ -105,11 +100,9 @@ Assert.NotSame(obj1, obj2); // controleert of de objecten niet naar dezelfde ins
 
 
 ## Fluent-Assertions
-Fluent Assertions is een populaire bibliotheek voor het schrijven van unit tests in .NET, die het gemakkelijker maakt om begrijpelijke en leesbare tests te schrijven.
-<br/>
-Install FluentAssertions NuGet package van dennisdoomen.
-### Strings
+Fluent Assertions is een populaire bibliotheek voor het schrijven van unit tests in .NET, die het gemakkelijker maakt om begrijpelijke en leesbare tests te schrijven. Install FluentAssertions NuGet package van dennisdoomen.
 
+### Strings
 ```csharp
 actualString.Should().Be(expectedString); // controleert of de twee strings exact gelijk zijn.
 actualString.Should().StartWith(expectedString); // controleert of de string begint met de verwachte waarde.
@@ -117,7 +110,6 @@ actualString.Should().EndWith(expectedString); // controleert of de string eindi
 
 // optionele parameters kunnen ook worden meegegeven
 actualString.Should().Be(expectedString, "omdat we ze willen vergelijken"); // voegt een boodschap toe aan de foutmelding
-
 ```
 
 ### Collections
