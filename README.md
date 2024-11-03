@@ -17,13 +17,13 @@
    - [Types](#Types)
 4. [Mocking](#Mocking)
    - [Mocking basic stuff](#Mocking-basic-stuff)
-5. [Zombie](#Zombie)
-   - [Zorg voor onderhoudbaarheid](#Zorg-voor-onderhoudbaarheid)
-   - [Oplossingsgerichtheid](#Oplossingsgerichtheid)
-   - [Modulariteit](#Modulariteit)
-   - [Beveiliging](#Beveiliging)
-   - [Integratie](#Integratie)
-   - [Efficiëntie](#Efficiëntie)
+5. [Zombies](#Zombies)
+   - [Zero](#Zero)
+   - [One](#One)
+   - [Many](#Many)
+   - [Boundary](#Boundary)
+   - [Interface](#Interface)
+   - [Exercise](#Exercise)
 
 ## Basisconcepten
 
@@ -168,57 +168,46 @@ _someInterfaceMock.Verify(d => d.Roll(), Times.Never); // checkt of de methode `
 
 <br />
 
-## Zombie
+## Zombies
 
-Het "zombie principe" herinnert ontwikkelaars aan belangrijke aspecten van softwareontwikkeling. Hieronder worden de letters van "ZOMBIE" uitgelegd met hun betekenis en voorbeelden.
+Het "zombie principe" in softwareontwikkeling staat voor belangrijke concepten die ervoor zorgen dat de code en architectuur van een applicatie robuust en goed beheerd zijn. Hieronder worden de letters van "ZOMBIE" uitgelegd met hun betekenis en voorbeelden.
 
-### Zorg voor onderhoudbaarheid
-**Betekenis**: Dit betekent dat je code moet schrijven die gemakkelijk te begrijpen en te wijzigen is. Onderhoudbaarheid is belangrijk omdat software vaak moet worden bijgewerkt of aangepast.
+### Zero
+**Betekenis**: Dit verwijst naar het principe van het vermijden van complexe oplossingen. Je moet proberen om een oplossing te vinden die geen onnodige afhankelijkheden heeft.
 
-**Voorbeeld**: 
-Als je een functie schrijft die gegevens verwerkt, zorg er dan voor dat je duidelijke naamgeving en commentaar gebruikt, zodat een andere ontwikkelaar (of jijzelf later) de functie snel kan begrijpen en wijzigen als dat nodig is.
-
----
-
-### Oplossingsgerichtheid
-**Betekenis**: Dit verwijst naar de aanpak om problemen op te lossen door creatieve en praktische oplossingen te vinden in plaats van je te concentreren op wat er misgaat.
-
-**Voorbeeld**: 
-Stel dat je een fout in je code tegenkomt. In plaats van je te frustreren, kun je systematisch debuggen en proberen verschillende oplossingen uit om het probleem op te lossen.
+**Voorbeeld**: In plaats van een complexe klasse met meerdere verantwoordelijkheden te maken, splits je de functionaliteit in kleinere, eenvoudiger klassen.
 
 ---
 
-### Modulariteit
-**Betekenis**: Dit houdt in dat je software moet opdelen in onafhankelijke modules of componenten die afzonderlijk kunnen worden ontwikkeld en getest.
+### One
+**Betekenis**: Dit principe houdt in dat elke functie of klasse één enkele verantwoordelijkheid moet hebben. Dit vergemakkelijkt het testen en onderhoud van de code.
 
-**Voorbeeld**: 
-In een webapplicatie kun je verschillende modules hebben voor gebruikersauthenticatie, databasemanagement en de gebruikersinterface, zodat je ze onafhankelijk van elkaar kunt ontwikkelen.
-
----
-
-### Beveiliging
-**Betekenis**: Dit benadrukt het belang van het implementeren van beveiligingsmaatregelen om gegevens en systemen te beschermen tegen ongeautoriseerde toegang of aanvallen.
-
-**Voorbeeld**: 
-Bij het ontwikkelen van een applicatie voor het opslaan van persoonlijke gegevens, moet je ervoor zorgen dat je encryptie gebruikt voor gegevens in rust en tijdens verzending.
+**Voorbeeld**: Een functie die alleen verantwoordelijk is voor het ophalen van gegevens uit een database en niet ook de gegevens verwerkt of weergeeft aan de gebruiker.
 
 ---
 
-### Integratie
-**Betekenis**: Dit betreft de mogelijkheid om verschillende systemen, modules of componenten effectief met elkaar te laten samenwerken.
+### Many
+**Betekenis**: Dit verwijst naar het idee dat je niet teveel verschillende dingen in één module of component moet proberen te doen. Dit leidt vaak tot verwarring en bugs.
 
-**Voorbeeld**: 
-Wanneer je een microservices-architectuur gebruikt, moet je ervoor zorgen dat elke microservice via API's goed kan communiceren met andere microservices.
-
----
-
-### Efficiëntie
-**Betekenis**: Dit verwijst naar het optimaliseren van code en processen om de snelheid en de middelen te verbeteren die een applicatie gebruikt.
-
-**Voorbeeld**: 
-In plaats van een brute-force benadering te gebruiken om een probleem op te lossen, kun je een algoritme gebruiken dat minder tijd en middelen vereist, zoals een zoekalgoritme met een betere tijdcomplexiteit.
+**Voorbeeld**: Als je een module hebt die zowel gegevensopslag als gebruikersauthenticatie afhandelt, is het beter om deze verantwoordelijkheden te scheiden in aparte modules.
 
 ---
 
-## Conclusie
-Het "zombie principe" herinnert ontwikkelaars eraan om deze belangrijke principes in gedachten te houden bij het schrijven van code en het ontwikkelen van software. Dit zorgt ervoor dat de software niet alleen functioneel is, maar ook onderhoudbaar, veilig en efficiënt.
+### Boundary
+**Betekenis**: Dit principe benadrukt het belang van duidelijke grenzen tussen verschillende componenten en systemen. Dit helpt bij het isoleren van problemen en vereenvoudigt integratie.
+
+**Voorbeeld**: Gebruik van API's om communicatie tussen verschillende systemen te beheren, zodat elk systeem zijn eigen verantwoordelijkheden behoudt.
+
+---
+
+### Interface
+**Betekenis**: Dit verwijst naar het ontwerp van interfaces die de communicatie tussen verschillende componenten vergemakkelijken. Goed ontworpen interfaces verbeteren de begrijpelijkheid en de bruikbaarheid van de software.
+
+**Voorbeeld**: Een duidelijk gedefinieerde interface voor een service die klantgegevens beheert, zodat andere delen van de applicatie eenvoudig met deze service kunnen communiceren.
+
+---
+
+### Exercise
+**Betekenis**: Dit principe moedigt aan tot voortdurende oefening en verbetering van de codebasis. Dit omvat het schrijven van tests, refactoren van code en het volgen van best practices.
+
+**Voorbeeld**: Regelmatig testen en refactoren van de code om de kwaliteit te verbeteren en technische schulden te verminderen.
