@@ -15,8 +15,8 @@
    - [Numbers](#Numbers)
    - [Exceptions](#Exceptions)
    - [Types](#Types)
-4. [Moq](https://documentation.help/Moq/)
-
+4. [Moq Documentatie](https://documentation.help/Moq/)
+   - [Basic Mocking](#Moq)
 ## Basisconcepten
 
 ### Constructor-setup
@@ -140,4 +140,11 @@ thing.Should().BeOfType<T>(); // controleert of het object van het verwachte typ
 thing.Should().BeAssignableTo<T>(); // controleert of het object kan worden toegewezen aan het opgegeven type.
 obj1.Should().BeSameAs(obj2); // controleert of beide objecten naar dezelfde instantie verwijzen.
 obj1.Should().NotBeSameAs(obj2); // controleert of de objecten niet naar dezelfde instantie verwijzen.
+```
+
+## Basic
+### Moq
+```csharp
+_someInterface.Verify(h => h.Enable(), Times.Once); // checkt of de methode `Enable` exact 1 keer is uitgevoerd.
+_someInterface.Verify(h => h.Disable(), Times.Never); // checkt of de methode `Disable` nooit is uitgevoerd.
 ```
