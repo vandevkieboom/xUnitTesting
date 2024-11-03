@@ -9,12 +9,18 @@
    - [numbers](#numbers)
    - [exceptions](#exceptions)
    - [types](#types)
+3. [fluent assertions](#fluent-assertions)
+   - [strings](#strings)
+   - [collections](#collections)
+   - [numbers](#numbers)
+   - [exceptions](#exceptions)
+   - [types](#types)
 
 ## basisconcepten
 
 ### constructor-setup
 
-indien we telkens voor elke test dezelfde code moeten schrijven kunnen we dit in 1 keer doen bij het opstarten van de test aan de hand van een constructor.
+Indien we telkens voor elke test dezelfde code moeten schrijven kunnen we dit in 1 keer doen bij het opstarten van de test aan de hand van een constructor.
 voorbeeld:
 ```csharp
 public class UnitTests
@@ -32,7 +38,8 @@ public class UnitTests
 
 ### fact-en-theory
 
-een `Fact` is een test die altijd wordt uitgevoerd met een vaste set aanvoergegevens. Het wordt gebruikt voor eenvoudige tests die een specifieke functionaliteit verifiëren.
+Een `Fact` is een test die altijd wordt uitgevoerd met een vaste set aanvoergegevens. 
+Het wordt gebruikt voor eenvoudige tests die een specifieke functionaliteit verifiëren.
 ```csharp
 [Fact]
 public void Test_SimpleAddition()
@@ -42,7 +49,8 @@ public void Test_SimpleAddition()
 }
 ```
 
-een `Theory` is een test die meerdere sets van gegevens accepteert. Dit is nuttig voor parametrische tests waarbij de test met verschillende invoerwaarden kan worden uitgevoerd.
+Een `Theory` is een test die meerdere sets van gegevens accepteert. 
+Dit is nuttig voor parametrische tests waarbij de test met verschillende invoerwaarden kan worden uitgevoerd.
 ```csharp
 [Theory]
 [InlineData(2, 2, 4)]  // test met deze invoerwaarden
@@ -99,4 +107,52 @@ Assert.IsType<T>(thing); // controleert of het object van het verwachte type is.
 Assert.IsAssignableFrom<T>(thing); // controleert of het object kan worden toegewezen aan het opgegeven type.
 Assert.Same(obj1, obj2); // controleert of beide objecten naar dezelfde instantie verwijzen.
 Assert.NotSame(obj1, obj2); // controleert of de objecten niet naar dezelfde instantie verwijzen.
+```
+
+
+## fluent-assertions
+
+Fluent Assertions is een populaire bibliotheek voor het schrijven van unit tests in .NET, die het gemakkelijker maakt om begrijpelijke en leesbare tests te schrijven.
+install FluentAssertions NuGet package van dennisdoomen.
+### strings
+
+```csharp
+actualString.Should().Be(expectedString); // controleert of de twee strings exact gelijk zijn.
+actualString.Should().StartWith(expectedString); // controleert of de string begint met de verwachte waarde.
+actualString.Should().EndWith(expectedString); // controleert of de string eindigt met de verwachte waarde.
+
+// optionele parameters kunnen ook worden meegegeven
+actualString.Should().Be(expectedString, "omdat we ze willen vergelijken"); // voegt een boodschap toe aan de foutmelding
+
+```
+
+### collections
+
+```csharp
+collection.Should().Contain(expectedThing); // controleert of de collectie het verwachte item bevat.
+collection.Should().NotContain(expectedThing); // controleert of de collectie het verwachte item niet bevat.
+collection.Should().BeEmpty(); // controleert of de collectie leeg is.
+collection.Should().OnlyContain(item => !string.IsNullOrWhiteSpace(item)); // controleert of alle items in de collectie niet leeg of alleen witruimte zijn.
+```
+
+### numbers
+
+```csharp
+thingToCheck.Should().BeInRange(lowRange, highRange); // controleert of de waarde binnen het opgegeven bereik ligt.
+```
+
+### exceptions
+
+```csharp
+Action act = () => sut.Method();
+act.Should().Throw<T>(); // controleert of een specifieke uitzondering wordt opgegooid door de methode.
+```
+
+### types
+
+```csharp
+thing.Should().BeOfType<T>(); // controleert of het object van het verwachte type is.
+thing.Should().BeAssignableTo<T>(); // controleert of het object kan worden toegewezen aan het opgegeven type.
+obj1.Should().BeSameAs(obj2); // controleert of beide objecten naar dezelfde instantie verwijzen.
+obj1.Should().NotBeSameAs(obj2); // controleert of de objecten niet naar dezelfde instantie verwijzen.
 ```
