@@ -15,6 +15,7 @@
    - [Numbers](#Numbers)
    - [Exceptions](#Exceptions)
    - [Types](#Types)
+4. [Moq](https://documentation.help/Moq/)
 
 ## Basisconcepten
 
