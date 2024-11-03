@@ -24,13 +24,13 @@ Indien voor elke test dezelfde code moeten schrijven kunnen we dit in één keer
 ```csharp
 public class UnitTests
 {
-    private readonly Mock<ISomeInterface> _someInterface;
+    private readonly Mock<ISomeInterface> _someInterfaceMock;
     private readonly SomeClass _someClass;
 
     public UnitTests() // constructor shortcut is 'ctor'
     {
-        _someInterface = new Mock<ISomeInterface>();
-        _someClass = new SomeClass(_someInterface.Object);
+        _someInterfaceMock = new Mock<ISomeInterface>();
+        _someClass = new SomeClass(_someInterfaceMock.Object);
     }
 }
 ```
@@ -145,6 +145,12 @@ obj1.Should().NotBeSameAs(obj2); // controleert of de objecten niet naar dezelfd
 ## Basic
 ### Moq
 ```csharp
-_someInterface.Verify(h => h.Enable(), Times.Once); // checkt of de methode `Enable` exact 1 keer is uitgevoerd.
-_someInterface.Verify(h => h.Disable(), Times.Never); // checkt of de methode `Disable` nooit is uitgevoerd.
+_someInterfaceMock.Setup(d => d.Roll()).Returns(17); // zet een verwachte waarde voor de `Roll` methode.
+_someInterfaceMock.Setup(d => d.Roll()).Throws<Exception>(); // configureert de `Roll` methode om een exception te werpen.
+
+```
+
+```csharp
+_someInterfaceMock.Verify(d => d.Roll(), Times.Once); // checkt of de methode `Roll` exact 1 keer is uitgevoerd.
+_someInterfaceMock.Verify(d => d.Roll(), Times.Never); // checkt of de methode `Roll` nooit is uitgevoerd.
 ```
