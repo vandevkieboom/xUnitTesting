@@ -1,6 +1,6 @@
 # xUnitTesting - dit is enkel voor xUnit!
 
-## Menu
+## Inleiding
 
 1. [Basisconcepten](#Basisconcepten)
    - [Constructor setup](#Constructor-setup)
@@ -160,4 +160,4 @@ _someInterfaceMock.Verify(d => d.Roll(), Times.Once); // checkt of de methode `R
 _someInterfaceMock.Verify(d => d.Roll(), Times.Never); // checkt of de methode `Roll` nooit is uitgevoerd.
 ```
 
-[terug naar boven](#Menu)
+[terug naar boven](#Inleiding)
