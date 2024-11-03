@@ -1,9 +1,9 @@
 # xUnitTesting
 
 1. [Basisconcepten](#basisconcepten)
-   - [Constructor Setup](#constructor-setup)
-   - [Fact en Theory](#fact-en-theory)
-2. [Assertions](#assertions)
+   - [setup](#constructor-setup)
+   - [fact & theory](#fact-en-theory)
+2. [Asserts](#asserts)
    - [Strings](#strings)
    - [Collections](#collections)
    - [Numbers](#numbers)
@@ -12,7 +12,7 @@
 
 ## basisconcepten
 
-### constructor-setup
+### setup
 
 indien we telkens voor elke test dezelfde code moeten schrijven kunnen we dit in 1 keer doen bij het opstarten van de test aan de hand van een constructor.
 voorbeeld:
@@ -30,7 +30,7 @@ public class UnitTests
 }
 ```
 
-### fact-en-theory
+### fact & theory
 
 een `Fact` is een test die altijd wordt uitgevoerd met een vaste set aanvoergegevens. Het wordt gebruikt voor eenvoudige tests die een specifieke functionaliteit verifiëren.
 ```csharp
@@ -55,7 +55,7 @@ public void Test_Addition(int a, int b, int expected)
 ```
 
 
-## asserts
+### asserts
 
 /*
     strings
