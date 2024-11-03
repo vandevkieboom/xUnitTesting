@@ -1,5 +1,42 @@
 # xUnitTesting
 
+## basisconcepten
+
+indien we telkens voor elke test dezelfde code moeten schrijven kunnen we dit in 1 keer doen bij het opstarten van de test aan de hand van een constructor.
+voorbeeld:
+public class UnitTests
+{
+    private readonly Mock<ISomeInterface> _someInterface;
+    private readonly SomeClass _someClass;
+
+    public UnitTests() // constructor shortcut is 'ctor'
+    {
+        _someInterface = new Mock<ISomeInterface>();
+        _someClass = new SomeClass(_someInterface.Object);
+    }
+}
+
+een `Fact` is een test die altijd wordt uitgevoerd met een vaste set aanvoergegevens. Het wordt gebruikt voor eenvoudige tests die een specifieke functionaliteit verifiëren.
+[Fact]
+public void Test_SimpleAddition()
+{
+    int result = 2 + 2;
+    Assert.Equal(4, result); // controleert of de uitkomst gelijk is aan 4
+}
+
+een `Theory` is een test die meerdere sets van gegevens accepteert. Dit is nuttig voor parametrische tests waarbij de test met verschillende invoerwaarden kan worden uitgevoerd.
+[Theory]
+[InlineData(2, 2, 4)]  // test met deze invoerwaarden
+[InlineData(3, 3, 6)]  // test met andere invoerwaarden
+public void Test_Addition(int a, int b, int expected)
+{
+    int result = a + b;
+    Assert.Equal(expected, result); // controleert of de uitkomst gelijk is aan de verwachte waarde
+}
+
+
+## asserts
+
 /*
     strings
 */
