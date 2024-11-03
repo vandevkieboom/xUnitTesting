@@ -18,10 +18,12 @@
 4. [Mocking](#Mocking)
    - [Mocking basic stuff](#Mocking-basic-stuff)
 5. [Zombie](#Zombie)
-   - [Mocking basic stuff](#Mocking-basic-stuff)
-
-
-
+   - [Zorg voor onderhoudbaarheid](#Zorg-voor-onderhoudbaarheid)
+   - [Oplossingsgerichtheid](#Oplossingsgerichtheid)
+   - [Modulariteit](#Modulariteit)
+   - [Beveiliging](#Beveiliging)
+   - [Integratie](#Integratie)
+   - [Efficiëntie](#Efficiëntie)
 
 ## Basisconcepten
 
@@ -167,11 +169,10 @@ _someInterfaceMock.Verify(d => d.Roll(), Times.Never); // checkt of de methode `
 <br />
 
 ## Zombie
-# Zombie Principe in Softwareontwikkeling
 
 Het "zombie principe" herinnert ontwikkelaars aan belangrijke aspecten van softwareontwikkeling. Hieronder worden de letters van "ZOMBIE" uitgelegd met hun betekenis en voorbeelden.
 
-## Z - Zorg voor onderhoudbaarheid
+### Zorg voor onderhoudbaarheid
 **Betekenis**: Dit betekent dat je code moet schrijven die gemakkelijk te begrijpen en te wijzigen is. Onderhoudbaarheid is belangrijk omdat software vaak moet worden bijgewerkt of aangepast.
 
 **Voorbeeld**: 
@@ -179,7 +180,7 @@ Als je een functie schrijft die gegevens verwerkt, zorg er dan voor dat je duide
 
 ---
 
-## O - Oplossingsgerichtheid
+### Oplossingsgerichtheid
 **Betekenis**: Dit verwijst naar de aanpak om problemen op te lossen door creatieve en praktische oplossingen te vinden in plaats van je te concentreren op wat er misgaat.
 
 **Voorbeeld**: 
@@ -187,7 +188,7 @@ Stel dat je een fout in je code tegenkomt. In plaats van je te frustreren, kun j
 
 ---
 
-## M - Modulariteit
+### Modulariteit
 **Betekenis**: Dit houdt in dat je software moet opdelen in onafhankelijke modules of componenten die afzonderlijk kunnen worden ontwikkeld en getest.
 
 **Voorbeeld**: 
@@ -195,7 +196,7 @@ In een webapplicatie kun je verschillende modules hebben voor gebruikersauthenti
 
 ---
 
-## B - Beveiliging
+### Beveiliging
 **Betekenis**: Dit benadrukt het belang van het implementeren van beveiligingsmaatregelen om gegevens en systemen te beschermen tegen ongeautoriseerde toegang of aanvallen.
 
 **Voorbeeld**: 
@@ -203,7 +204,7 @@ Bij het ontwikkelen van een applicatie voor het opslaan van persoonlijke gegeven
 
 ---
 
-## I - Integratie
+### Integratie
 **Betekenis**: Dit betreft de mogelijkheid om verschillende systemen, modules of componenten effectief met elkaar te laten samenwerken.
 
 **Voorbeeld**: 
@@ -211,7 +212,7 @@ Wanneer je een microservices-architectuur gebruikt, moet je ervoor zorgen dat el
 
 ---
 
-## E - Efficiëntie
+### Efficiëntie
 **Betekenis**: Dit verwijst naar het optimaliseren van code en processen om de snelheid en de middelen te verbeteren die een applicatie gebruikt.
 
 **Voorbeeld**: 
@@ -221,4 +222,3 @@ In plaats van een brute-force benadering te gebruiken om een probleem op te loss
 
 ## Conclusie
 Het "zombie principe" herinnert ontwikkelaars eraan om deze belangrijke principes in gedachten te houden bij het schrijven van code en het ontwikkelen van software. Dit zorgt ervoor dat de software niet alleen functioneel is, maar ook onderhoudbaar, veilig en efficiënt.
-
