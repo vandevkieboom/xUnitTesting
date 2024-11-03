@@ -12,6 +12,8 @@
 
 ## basisconcepten
 
+### constructor-setup
+
 indien we telkens voor elke test dezelfde code moeten schrijven kunnen we dit in 1 keer doen bij het opstarten van de test aan de hand van een constructor.
 voorbeeld:
 ```csharp
@@ -27,6 +29,8 @@ public class UnitTests
     }
 }
 ```
+
+### fact-en-theory
 
 een `Fact` is een test die altijd wordt uitgevoerd met een vaste set aanvoergegevens. Het wordt gebruikt voor eenvoudige tests die een specifieke functionaliteit verifiëren.
 ```csharp
