@@ -142,12 +142,10 @@ obj1.Should().BeSameAs(obj2); // controleert of beide objecten naar dezelfde ins
 obj1.Should().NotBeSameAs(obj2); // controleert of de objecten niet naar dezelfde instantie verwijzen.
 ```
 
-<br .>
+<br />
 
 ## Mocking
-Heel basic moq stuff dat we hebben gezien zoals een setup en verify en het forceren van een exception dus een methode laten mislukken via de setup.
-<br />
-[Officiële Moq documentatie](https://documentation.help/Moq/)
+Heel basic moq stuff dat we hebben gezien zoals een setup en verify en het forceren van een exception dus een methode laten mislukken via de setup. [Officiële Moq documentatie](https://documentation.help/Moq/)
 ### Mocking
 ```csharp
 _someInterfaceMock.Setup(d => d.Roll()).Returns(17); // zet een verwachte waarde voor de `Roll` methode.
