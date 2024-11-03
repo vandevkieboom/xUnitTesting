@@ -1,18 +1,18 @@
 # xUnitTesting
 
-1. [Basisconcepten](#basisconcepten)
+1. [basisconcepten](#basisconcepten)
    - [setup](#constructor-setup)
    - [fact & theory](#fact-en-theory)
-2. [Asserts](#asserts)
-   - [Strings](#strings)
-   - [Collections](#collections)
-   - [Numbers](#numbers)
-   - [Exceptions](#exceptions)
-   - [Types](#types)
+2. [asserts](#asserts)
+   - [strings](#strings)
+   - [collections](#collections)
+   - [numbers](#numbers)
+   - [exceptions](#exceptions)
+   - [types](#types)
 
 ## basisconcepten
 
-### setup
+### constructor-setup
 
 indien we telkens voor elke test dezelfde code moeten schrijven kunnen we dit in 1 keer doen bij het opstarten van de test aan de hand van een constructor.
 voorbeeld:
@@ -30,7 +30,7 @@ public class UnitTests
 }
 ```
 
-### fact & theory
+### fact-en-theory
 
 een `Fact` is een test die altijd wordt uitgevoerd met een vaste set aanvoergegevens. Het wordt gebruikt voor eenvoudige tests die een specifieke functionaliteit verifiëren.
 ```csharp
@@ -57,9 +57,9 @@ public void Test_Addition(int a, int b, int expected)
 
 ### asserts
 
-/*
-    strings
-*/
+### strings
+
+```csharp
 Assert.Equal(expectedString, actualString); // controleert of de twee strings exact gelijk zijn.
 Assert.StartsWith(expectedString, stringToCheck); // controleert of de string begint met de verwachte waarde.
 Assert.EndsWith(expectedString, stringToCheck); // controleert of de string eindigt met de verwachte waarde.
@@ -67,10 +67,10 @@ Assert.EndsWith(expectedString, stringToCheck); // controleert of de string eind
 // optionele parameters kunnen ook worden meegegeven
 Assert.Equal(expectedString, actualString, ignoreCase: true); // controleert of de twee strings gelijk zijn, negeert hoofdlettergevoeligheid.
 Assert.StartsWith(expectedString, stringToCheck, StringComparison.OrdinalIgnoreCase); // controleert of de string begint met de verwachte waarde, negeert hoofdlettergevoeligheid.
+```
 
-/*
-    collections
-*/
+### collections
+
 Assert.Contains(expectedThing, collection); // controleert of de collectie het verwachte item bevat.
 // overload-methode voor `Contains`
 Assert.Contains(collection, item => item.Contains(thingToCheck)); // controleert of de collectie een item bevat dat voldoet aan de voorwaarde.
@@ -78,19 +78,16 @@ Assert.DoesNotContain(expectedThing, collection); // controleert of de collectie
 Assert.Empty(collection); // controleert of de collectie leeg is.
 Assert.All(collection, item => Assert.False(string.IsNullOrWhiteSpace(item))); // controleert of alle items in de collectie aan de opgegeven voorwaarde voldoen (hier: geen lege of witte ruimte).
 
-/*
-    numbers
-*/
+### numbers
+
 Assert.InRange(thingToCheck, lowRange, highRange); // controleert of de waarde binnen het opgegeven bereik ligt.
 
-/*
-    exceptions
-*/
+### exceptions
+
 Assert.Throws<T>(() => sut.Method()); // controleert of een specifieke uitzondering wordt opgegooid door de methode.
 
-/*
-    types
-*/
+### types
+
 Assert.IsType<T>(thing); // controleert of het object van het verwachte type is.
 Assert.IsAssignableFrom<T>(thing); // controleert of het object kan worden toegewezen aan het opgegeven type.
 Assert.Same(obj1, obj2); // controleert of beide objecten naar dezelfde instantie verwijzen.
