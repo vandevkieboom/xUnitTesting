@@ -16,7 +16,7 @@
    - [Exceptions](#Exceptions)
    - [Types](#Types)
 4. [Moq Documentatie](https://documentation.help/Moq/)
-   - [Basic Mocking](#Moq)
+   - [Mocking](#Mocking)
 ## Basisconcepten
 
 ### Constructor-setup
@@ -142,8 +142,13 @@ obj1.Should().BeSameAs(obj2); // controleert of beide objecten naar dezelfde ins
 obj1.Should().NotBeSameAs(obj2); // controleert of de objecten niet naar dezelfde instantie verwijzen.
 ```
 
-## Basic
-### Moq
+<br .>
+
+## Mocking
+Heel basic moq stuff dat we hebben gezien zoals een setup en verify en het forceren van een exception dus een methode laten mislukken via de setup.
+<br />
+[Officiële Moq documentatie](https://documentation.help/Moq/)
+### Mocking
 ```csharp
 _someInterfaceMock.Setup(d => d.Roll()).Returns(17); // zet een verwachte waarde voor de `Roll` methode.
 _someInterfaceMock.Setup(d => d.Roll()).Throws<Exception>(); // configureert de `Roll` methode om een exception te werpen.
