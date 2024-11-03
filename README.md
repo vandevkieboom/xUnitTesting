@@ -57,6 +57,8 @@ public void Test_Addition(int a, int b, int expected)
 }
 ```
 
+<br />
+<br />
 
 ## Assertions
 ### Strings
@@ -98,6 +100,8 @@ Assert.Same(obj1, obj2); // controleert of beide objecten naar dezelfde instanti
 Assert.NotSame(obj1, obj2); // controleert of de objecten niet naar dezelfde instantie verwijzen.
 ```
 
+<br />
+<br />
 
 ## Fluent-Assertions
 Fluent Assertions is een populaire bibliotheek voor het schrijven van unit tests in .NET, die het gemakkelijker maakt om begrijpelijke en leesbare tests te schrijven. Install FluentAssertions NuGet package van dennisdoomen.
