@@ -4,6 +4,7 @@
 
 indien we telkens voor elke test dezelfde code moeten schrijven kunnen we dit in 1 keer doen bij het opstarten van de test aan de hand van een constructor.
 voorbeeld:
+```csharp
 public class UnitTests
 {
     private readonly Mock<ISomeInterface> _someInterface;
