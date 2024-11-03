@@ -58,7 +58,6 @@ public void Test_Addition(int a, int b, int expected)
 ```
 
 <br />
-<br />
 
 ## Assertions
 ### Strings
@@ -100,7 +99,6 @@ Assert.Same(obj1, obj2); // controleert of beide objecten naar dezelfde instanti
 Assert.NotSame(obj1, obj2); // controleert of de objecten niet naar dezelfde instantie verwijzen.
 ```
 
-<br />
 <br />
 
 ## Fluent-Assertions
