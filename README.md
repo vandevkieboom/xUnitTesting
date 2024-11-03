@@ -18,7 +18,7 @@
    - [Exceptions](#Exceptions)
    - [Types](#Types)
 4. [Mocking](#Mocking)
-5. [Zombies: One Behavior at a Time](https://apwt.gitbook.io/g-pro-software-testing/group/les-5-unit-testing#new-welke-tests-schrijven-en-wanneer-zijn-er-voldoende)
+5. [Zombies: One Behavior at a Time](https://apwt.gitbook.io/g-pro-software-testing/group/les-5-unit-testing#new-welke-tests-schrijven-en-wanneer-zijn-er-voldoende){:target="_blank"}
 
 ## Basisconcepten
 
