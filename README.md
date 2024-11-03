@@ -153,6 +153,8 @@ _someInterfaceMock.Setup(d => d.Roll()).Throws<Exception>(); // configureert de 
 
 ```
 
+#[return to the top](#Basisconcepten)
+
 ```csharp
 _someInterfaceMock.Verify(d => d.Roll(), Times.Once); // checkt of de methode `Roll` exact 1 keer is uitgevoerd.
 _someInterfaceMock.Verify(d => d.Roll(), Times.Never); // checkt of de methode `Roll` nooit is uitgevoerd.
