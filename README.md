@@ -16,7 +16,6 @@
    - [Exceptions](#Exceptions)
    - [Types](#Types)
 4. [Mocking](#Mocking)
-   - [Mocking basic stuff](#Mocking-basic-stuff)
 5. [Zombies: One Behavior at a Time](https://apwt.gitbook.io/g-pro-software-testing/group/les-5-unit-testing#new-welke-tests-schrijven-en-wanneer-zijn-er-voldoende)
 
 ## Basisconcepten
@@ -148,7 +147,6 @@ obj1.Should().NotBeSameAs(obj2); // controleert of de objecten niet naar dezelfd
 
 ## Mocking
 Heel basic moq stuff dat we hebben gezien zoals een setup en verify en het forceren van een exception dus een methode laten mislukken via de setup. [Officiële Moq documentatie](https://documentation.help/Moq/)
-### Mocking-basic-stuff
 ```csharp
 _someInterfaceMock.Setup(d => d.Roll()).Returns(17); // zet een verwachte waarde voor de `Roll` methode.
 _someInterfaceMock.Setup(d => d.Roll()).Throws<Exception>(); // configureert de `Roll` methode om een exception te werpen.
