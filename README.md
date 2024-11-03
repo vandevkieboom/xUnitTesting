@@ -17,7 +17,7 @@
    - [Types](#Types)
 4. [Mocking](#Mocking)
    - [Mocking basic stuff](#Mocking-basic-stuff)
-5. [TDD Guided by ZOMBIES](https://apwt.gitbook.io/g-pro-software-testing/group/les-5-unit-testing#new-welke-tests-schrijven-en-wanneer-zijn-er-voldoende)
+5. [Zombies: One Behavior at a Time](https://apwt.gitbook.io/g-pro-software-testing/group/les-5-unit-testing#new-welke-tests-schrijven-en-wanneer-zijn-er-voldoende)
 
 ## Basisconcepten
 
