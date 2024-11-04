@@ -106,7 +106,7 @@ Assert.NotSame(obj1, obj2); // controleert of de objecten niet naar dezelfde ins
 <br />
 
 ## Fluent-Assertions
-`Fluent Assertions` is een krachtige en populaire bibliotheek voor het schrijven van unit tests in .NET, die traditionele assert-methoden vervangt door een meer expressieve en leesbare syntaxis. Installeer het FluentAssertions NuGet-pakket van ***Dennis Doomen***
+Fluent Assertions is een krachtige en populaire bibliotheek voor het schrijven van unit tests, die traditionele assert-methoden vervangt door een meer expressieve en leesbare syntaxis. Installeer het FluentAssertions NuGet-pakket van Dennis Doomen
 
 ### Fluent-Assertion-Strings
 ```csharp
