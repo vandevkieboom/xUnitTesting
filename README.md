@@ -150,8 +150,8 @@ thingToCheck.Should().BeInRange(lowRange, highRange); // controleert of de waard
 Action act = () => sut.Method(); // roept de methode aan die getest wordt.
 act.Should().Throw<T>(); // controleert of een specifieke uitzondering wordt opgegooid door de methode.
 
-act.Should().Throw<T>()
-   .WithMessage("Caught an exception.*") // controleert of de foutmelding overeenkomt met de verwachte tekst.
+//om ook op een exception message te testen kunnen we dit aan de act.Should().Throw<T>() toevoegen.
+.WithMessage("Caught an exception.*")
 ```
 
 ### Fluent-Assertions-Types
