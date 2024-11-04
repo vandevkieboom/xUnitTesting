@@ -6,24 +6,24 @@
    - [Constructor setup](#Constructor-setup)
    - [Fact en Theory](#Fact-en-Theory)
 2. [Assertions](#Assertions)
-   - [Strings](#Strings)
-   - [Collections](#Collections)
-   - [Numbers](#Numbers)
-   - [Exceptions](#Exceptions)
-   - [Types](#Types)
+   - [Strings](#Assertions-Strings)
+   - [Collections](#Assertions-Collections)
+   - [Numbers](#Assertions-Numbers)
+   - [Exceptions](#Assertions-Exceptions)
+   - [Types](#Assertions-Types)
 3. [Fluent Assertions](#Fluent-Assertions)
-   - [Strings](#Strings)
-   - [Collections](#Collections)
-   - [Numbers](#Numbers)
-   - [Exceptions](#Exceptions)
-   - [Types](#Types)
+   - [Strings](#Fluent-Assertion-Strings)
+   - [Collections](#Fluent-Assertion-Collections)
+   - [Numbers](#Fluent-Assertion-Numbers)
+   - [Exceptions](#Fluent-Assertion-Exceptions)
+   - [Types](#Fluent-Assertion-Types)
 4. [Mocking](#Mocking)
 5. [Zombies: One Behavior at a Time](https://apwt.gitbook.io/g-pro-software-testing/group/les-5-unit-testing#new-welke-tests-schrijven-en-wanneer-zijn-er-voldoende)
 
 ## Basisconcepten
 
 ### Constructor-setup
-Indien voor elke test dezelfde code moeten schrijven kunnen we dit in één keer doen bij het opstarten van de test aan de hand van een constructor.
+Indien we voor elke test dezelfde code moeten schrijven kunnen we dit in één keer doen bij het opstarten van de test aan de hand van een constructor.
 ```csharp
 public class UnitTests
 {
@@ -64,7 +64,7 @@ public void Test_Addition(int a, int b, int expected)
 <br />
 
 ## Assertions
-### Strings
+### Assertions-Strings
 ```csharp
 Assert.Equal(expectedString, actualString); // controleert of de twee strings exact gelijk zijn.
 Assert.StartsWith(expectedString, stringToCheck); // controleert of de string begint met de verwachte waarde.
@@ -75,7 +75,7 @@ Assert.Equal(expectedString, actualString, ignoreCase: true); // controleert of 
 Assert.StartsWith(expectedString, stringToCheck, StringComparison.OrdinalIgnoreCase); // controleert of de string begint met de verwachte waarde, negeert hoofdlettergevoeligheid.
 ```
 
-### Collections
+### Assertions-Collections
 ```csharp
 Assert.Contains(expectedThing, collection); // controleert of de collectie het verwachte item bevat.
 // overload-methode voor `Contains`
@@ -85,17 +85,17 @@ Assert.Empty(collection); // controleert of de collectie leeg is.
 Assert.All(collection, item => Assert.False(string.IsNullOrWhiteSpace(item))); // controleert of alle items in de collectie aan de opgegeven voorwaarde voldoen (hier: geen lege of witte ruimte).
 ```
 
-### Numbers
+### Assertions-Numbers
 ```csharp
 Assert.InRange(thingToCheck, lowRange, highRange); // controleert of de waarde binnen het opgegeven bereik ligt.
 ```
 
-### Exceptions
+### Assertions-Exceptions
 ```csharp
 Assert.Throws<T>(() => sut.Method()); // controleert of een specifieke uitzondering wordt opgegooid door de methode.
 ```
 
-### Types
+### Assertions-Types
 ```csharp
 Assert.IsType<T>(thing); // controleert of het object van het verwachte type is.
 Assert.IsAssignableFrom<T>(thing); // controleert of het object kan worden toegewezen aan het opgegeven type.
@@ -106,9 +106,9 @@ Assert.NotSame(obj1, obj2); // controleert of de objecten niet naar dezelfde ins
 <br />
 
 ## Fluent-Assertions
-Fluent Assertions is een populaire bibliotheek voor het schrijven van unit tests in .NET, die het gemakkelijker maakt om begrijpelijke en leesbare tests te schrijven. Install FluentAssertions NuGet package van dennisdoomen.
+`Fluent Assertions` is een krachtige en populaire bibliotheek voor het schrijven van unit tests in .NET, die traditionele assert-methoden vervangt door een meer expressieve en leesbare syntaxis. Installeer het FluentAssertions NuGet-pakket van ***Dennis Doomen***
 
-### Strings
+### Fluent-Assertion-Strings
 ```csharp
 actualString.Should().Be(expectedString); // controleert of de twee strings exact gelijk zijn.
 actualString.Should().StartWith(expectedString); // controleert of de string begint met de verwachte waarde.
@@ -118,7 +118,7 @@ actualString.Should().EndWith(expectedString); // controleert of de string eindi
 actualString.Should().Be(expectedString, "omdat we ze willen vergelijken"); // voegt een boodschap toe aan de foutmelding
 ```
 
-### Collections
+### Fluent-Assertion-Collections
 ```csharp
 collection.Should().Contain(expectedThing); // controleert of de collectie het verwachte item bevat.
 collection.Should().NotContain(expectedThing); // controleert of de collectie het verwachte item niet bevat.
@@ -126,18 +126,18 @@ collection.Should().BeEmpty(); // controleert of de collectie leeg is.
 collection.Should().OnlyContain(item => !string.IsNullOrWhiteSpace(item)); // controleert of alle items in de collectie niet leeg of alleen witruimte zijn.
 ```
 
-### Numbers
+### Fluent-Assertion-Numbers
 ```csharp
 thingToCheck.Should().BeInRange(lowRange, highRange); // controleert of de waarde binnen het opgegeven bereik ligt.
 ```
 
-### Exceptions
+### Fluent-Assertion-Exceptions
 ```csharp
 Action act = () => sut.Method();
 act.Should().Throw<T>(); // controleert of een specifieke uitzondering wordt opgegooid door de methode.
 ```
 
-### Types
+### Fluent-Assertion-Types
 ```csharp
 thing.Should().BeOfType<T>(); // controleert of het object van het verwachte type is.
 thing.Should().BeAssignableTo<T>(); // controleert of het object kan worden toegewezen aan het opgegeven type.
