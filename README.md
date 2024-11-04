@@ -147,8 +147,11 @@ thingToCheck.Should().BeInRange(lowRange, highRange); // controleert of de waard
 
 ### Fluent-Assertions-Exceptions
 ```csharp
-Action act = () => sut.Method();
+Action act = () => sut.Method(); // roept de methode aan die getest wordt.
 act.Should().Throw<T>(); // controleert of een specifieke uitzondering wordt opgegooid door de methode.
+
+act.Should().Throw<T>()
+   .WithMessage("Caught an exception.*") // controleert of de foutmelding overeenkomt met de verwachte tekst.
 ```
 
 ### Fluent-Assertions-Types
